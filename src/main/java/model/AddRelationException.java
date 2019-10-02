@@ -1,8 +1,8 @@
 /*
- * FamilyTree - Family tree modeling software 
+ * FamilyTree - Family tree modeling software
  * created for research purposes
- * 
- * 
+ *
+ *
  * Created on Oct 2, 2003
  *
  */
@@ -10,8 +10,6 @@ package model;
 
 /**
  * @author mmantyla
- *
- * 
  */
 public class AddRelationException extends Exception {
 
