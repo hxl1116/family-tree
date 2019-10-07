@@ -14,45 +14,21 @@
         <maven-compiler-plugin.target>1.8</maven-compiler-plugin.target>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.jupiter.version>3.8.1</junit.jupiter.version>
-        <mockito-core.version>3.0.0</mockito-core.version>
         <evo-suite.version>1.0.6</evo-suite.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito-core.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.evosuite</groupId>
             <artifactId>evosuite-standalone-runtime</artifactId>
             <version>${evo-suite.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.5.2</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.evosuite</groupId>
-            <artifactId>evosuite-standalone-runtime</artifactId>
-            <version>1.0.6</version>
+            <version>${junit.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -99,10 +75,14 @@
                 <groupId>org.evosuite.plugins</groupId>
                 <artifactId>evosuite-maven-plugin</artifactId>
                 <version>${evo-suite.version}</version>
-                <executions><execution>
-                    <goals> <goal> prepare </goal> </goals>
-                    <phase> process-test-classes </phase>
-                </execution></executions>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare</goal>
+                        </goals>
+                        <phase>process-test-classes</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
